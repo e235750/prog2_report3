@@ -9,10 +9,10 @@ package jp.ac.uryukyu.ie.e235750;
  * Created by tnal on 2016/11/13.
  */
 public class Hero {
-    public String name;
-    public int hitPoint;
-    public int attack;
-    public boolean dead;
+    private String name;
+    private int hitPoint;
+    private int attack;
+    private boolean dead;
 
     //setter, getter
     public void setName(String name){
@@ -64,7 +64,7 @@ public class Hero {
      */
     public void attack(Enemy e){
         int damage = (int)(Math.random() * attack);
-        System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, e.name, damage);
+        System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, e.getName(), damage);
         e.wounded(damage);
     }
 

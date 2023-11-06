@@ -9,36 +9,63 @@ package jp.ac.uryukyu.ie.e235750;
  * Created by tnal on 2016/11/13.
  */
 public class Enemy {
-    public String name;
-    public int hitPoint;
-    public int attack;
-    public boolean dead;
+    private String name;
+    private int hitPoint;
+    private int attack;
+    private boolean dead;
 
-    //setter, getter
+    /** 
+     * nameのsetter
+     */
     public void setName(String name){
         this.name = name;
     }
+    /**
+     * nameのgetter
+     * @return String name
+     */
     public String getName(){
         return this.name;
     }
 
+    /** 
+     * hitpointのsetter
+     */
     public void setHitpoint(int hitPoint){
         this.hitPoint = hitPoint;
     }
+    /**
+     * hitpointのgetter
+     * @return int hitpoint
+     */
     public int getHitpoint(){
         return this.hitPoint;
     }
 
+    /** 
+     * attackのsetter
+     */
     public void setAttack(int attack){
         this.attack = attack;
     }
+    /**
+     * attackのgetter
+     * @return int attack
+     */
     public int getAttack(){
         return this.attack;
     }
 
+    /** 
+     * deadのsetter
+     */
     public void setDead(boolean dead){
         this.dead = dead;
     }
+    /**
+     * deadのgetter
+     * @return boolean dead
+     */
     public boolean getDead(){
         return this.dead;
     }
@@ -64,8 +91,8 @@ public class Enemy {
      */
     public void attack(Hero hero){
         if(dead == false){
-            int damage = (int)(Math.random() * attack);
-            System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, hero.name, damage);
+        int damage = (int)(Math.random() * attack);
+            System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, hero.getName(), damage);
             hero.wounded(damage);
         } else{
             ; //何もしない
